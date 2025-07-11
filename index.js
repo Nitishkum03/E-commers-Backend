@@ -7,7 +7,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://e-commers-frontend-bay.vercel.app',
+    credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/products', require('./routes/products'));
